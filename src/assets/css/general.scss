@@ -5,6 +5,16 @@
     max-height: 100vh;
     height: 100vh;
     overflow: scroll;
+    overflow-x: hidden;
+
+    &::-webkit-scrollbar {
+        background: #fff !important;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #e6e6e6; 
+        border-radius: 10px;
+    }
 
     &_context {
         padding: 80px 40px 0 24px;
