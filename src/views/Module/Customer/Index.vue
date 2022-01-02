@@ -3,7 +3,7 @@
         <div class="jm_container_context">
             <div class="jm_container_context_breadcrumb">
                 <p>daftar customer</p>
-                <button class="btn jm_green jm_btn">+ produk baru</button>
+                <button class="btn jm_green jm_btn" @click.prevent="createProduct">+ produk baru</button>
             </div>
 
             <div class="jm_container_search">
@@ -16,7 +16,7 @@
             </div>
 
             <div class="card jm_card">
-                <div class="card-body">
+                <div class="card-body custom_card_body">
                     <table class="table jm_table">
                         <thead>
                             <tr>
@@ -59,6 +59,11 @@
 <script>
 export default {
     name: "Customer",
+    methods: {
+        createProduct() {
+            this.$router.push('/customer/create');
+        }
+    },
     data() {
         return {
             customer: [
@@ -147,5 +152,9 @@ export default {
         letter-spacing: 0.04em;
         color: #212121;
     }
+}
+
+.custom_card_body {
+    padding: 40px !important;
 }
 </style>
