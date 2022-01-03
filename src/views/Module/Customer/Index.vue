@@ -3,17 +3,10 @@
         <div class="jm_container_context">
             <div class="jm_container_context_breadcrumb">
                 <p>daftar customer</p>
-                <button class="btn jm_green jm_btn" @click.prevent="createProduct">+ produk baru</button>
+                <button class="btn jm_green jm_btn">+ produk baru</button>
             </div>
 
-            <div class="jm_container_search">
-                <input type="text" class="jm_container_search_input_default" placeholder="Search for clients, status">
-
-                <div class="jm_container_search_btn_group_default">
-                    <button class="btn jm_btn_transparent">Filter Kolom</button>
-                    <button class="btn jm_btn_transparent btn_export">Export</button>
-                </div>
-            </div>
+            <Search />
 
             <div class="card jm_card">
                 <div class="card-body custom_card_body">
@@ -30,7 +23,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-for="item in customer" v-bind:key="item.id">
+                            <tr v-for="item in customer" v-bind:key="item.id" @click.prevent="detail({id: item.id, type: item.type_2})" style="cursor: pointer;">
                                 <td class="customer_name">{{ item.name }}</td>
                                 <td>{{ item.email }}</td>
                                 <td>
@@ -57,72 +50,29 @@
 </template>
 
 <script>
+import Search from '@/components/Search.vue'
 export default {
     name: "Customer",
+    components: {
+        Search
+    },
     methods: {
-        createProduct() {
-            this.$router.push('/customer/create');
+        detail(param) {
+            this.$router.push('/customer/' + param.id);
         }
     },
-    data() {
-        return {
-            customer: [
-                {
-                    id: 1,
-                    name: 'Inti Gilang Sakama, PT',
-                    email: 'indesignpurchasing@gmail.com',
-                    type: 'project',
-                    telp: '081122334455',
-                    created_at: '2021-07-09 16:09:33',
-                    sales: '-'
-                },
-                {
-                    id: 2,
-                    name: 'Inti Gilang Sakama, PT',
-                    email: 'indesignpurchasing@gmail.com',
-                    type: 'project',
-                    telp: '081122334455',
-                    created_at: '2021-07-09 16:09:33',
-                    sales: '-'
-                },
-                {
-                    id: 3,
-                    name: 'Inti Gilang Sakama, PT',
-                    email: 'indesignpurchasing@gmail.com',
-                    type: 'project',
-                    telp: '081122334455',
-                    created_at: '2021-07-09 16:09:33',
-                    sales: '-'
-                },
-                {
-                    id: 4,
-                    name: 'Inti Gilang Sakama, PT',
-                    email: 'indesignpurchasing@gmail.com',
-                    type: 'project',
-                    telp: '081122334455',
-                    created_at: '2021-07-09 16:09:33',
-                    sales: '-'
-                },
-                {
-                    id: 5,
-                    name: 'Inti Gilang Sakama, PT',
-                    email: 'indesignpurchasing@gmail.com',
-                    type: 'project',
-                    telp: '081122334455',
-                    created_at: '2021-07-09 16:09:33',
-                    sales: '-'
-                },
-            ]
+    mounted() {
+        this.$store.dispatch("customer/getCustomer");
+    },
+    computed: {
+        customer() {
+            return this.$store.getters["customer/customer"];
         }
     }
 }
 </script>
 
 <style lang="scss" scoped>
-.btn_export {
-    margin-left: 16px;
-}
-
 .customer_name {
     font-style: normal;
     font-weight: bold !important;

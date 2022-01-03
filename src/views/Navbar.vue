@@ -35,13 +35,19 @@ export default {
                     id: 2,
                     icon: '/customer',
                     name: 'customer',
-                    link: '/customer'
+                    link: '/customer',
+                    children: [
+                        {
+                            path: 'approval',
+                            link: '/approval'
+                        }
+                    ]
                 },
                 {
                     id: 3,
                     icon: 'icon/path',
-                    name: 'dashboard',
-                    link: '/'
+                    name: 'Customer Approval',
+                    link: '/approval'
                 },
                 {
                     id: 4,

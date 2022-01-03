@@ -17,21 +17,21 @@
                             <div class="col md-4">
                                 <div class="jm_form_group">
                                     <label for="">nama</label>
-                                    <input type="text" class="jm_input" placeholder="nama">
+                                    <input type="text" class="jm_input" placeholder="nama" v-model="detail.name">
                                 </div>
                             </div>
                             <div class="col md-4">
                                 <div class="jm_form_group">
                                     <label for="">email</label>
-                                    <input type="email" class="jm_input" placeholder="email">
+                                    <input type="email" class="jm_input" placeholder="email" v-model="detail.email">
                                 </div>
                             </div>
                             <div class="col md-4">
                                 <div class="jm_form_group">
                                     <label for="">jenis</label>
                                     <div class="custom_checkbox">
-                                        <button class="btn custom_checkbox_btn">retail</button>
-                                        <button class="btn custom_checkbox_btn">kontraktor</button>
+                                        <button class="btn custom_checkbox_btn" :class="detail.type_2 == 'retail' ? 'jm_border active': ''">retail</button>
+                                        <button class="btn custom_checkbox_btn" :class="detail.type_2 == 'contractor' ? 'active': ''">kontraktor</button>
                                     </div>
                                 </div>
                             </div>
@@ -40,7 +40,7 @@
                             <div class="col md-4">
                                 <div class="jm_form_group">
                                     <label for="">nomor telepon</label>
-                                    <input type="text" class="jm_input" placeholder="nomor telepon">
+                                    <input type="text" class="jm_input" placeholder="nomor telepon" v-model="detail.telp">
                                 </div>
                             </div>
                             <div class="col md-4">
@@ -53,6 +53,26 @@
                                 <div class="jm_form_group">
                                     <label for="">down payment</label>
                                     <input type="text" class="jm_input" placeholder="down payment">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" v-show="detail.type_2 == 'contractor'">
+                            <div class="col md-4">
+                                <div class="jm_form_group">
+                                    <label for="">NPWP</label>
+                                    <input type="text" class="jm_input" placeholder="nomor telepon" v-model="detail.npwp">
+                                </div>
+                            </div>
+                            <div class="col md-4">
+                                <div class="jm_form_group">
+                                    <label for="">NIB</label>
+                                    <input type="text" class="jm_input" placeholder="termin" v-model="detail.nib">
+                                </div>
+                            </div>
+                            <div class="col md-4">
+                                <div class="jm_form_group">
+                                    <label for="">SPPKP</label>
+                                    <input type="text" class="jm_input" placeholder="down payment" v-model="detail.sppkp">
                                 </div>
                             </div>
                         </div>
@@ -198,7 +218,7 @@
 
 <script>
 export default {
-    name: "CustomerCreate",
+    name: "Detail",
     data() {
         return {
             customer: [
@@ -213,9 +233,31 @@ export default {
             ]
         }
     },
+    mounted() {
+        var id = this.$route.params.id;
+
+        this.getDetail(id);
+    },
     methods: {
         resetModal() {
             console.log('modal closed');
+        },
+        getDetail(id) {
+            var cust = this.$store.getters["customer/customer"];
+
+            var detail = "";
+            for (var a = 0; a < cust.length; a++) {
+                if (cust[a].id == id) {
+                    detail = cust[a];
+                }
+            }
+
+            this.$store.dispatch("customer/detail", detail);
+        }
+    },
+    computed: {
+        detail() {
+            return this.$store.getters["customer/customerDetail"];
         }
     }
 }
@@ -233,7 +275,7 @@ export default {
     &_btn {
         border: 0.5px solid #DFDFDF;
         box-sizing: border-box;
-        border-radius: 20px;
+        border-radius: 20px !important;
         padding: 8px 16px !important;
         text-transform: capitalize;
         margin-right: 8px;
