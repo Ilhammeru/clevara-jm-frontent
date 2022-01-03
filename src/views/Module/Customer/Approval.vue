@@ -61,3 +61,9 @@ export default {
     }
 }
 </script>
+
+<style lang="scss" scoped>
+.custom_card_body {
+    padding: 40px !important;
+}
+</style>
