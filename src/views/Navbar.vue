@@ -28,7 +28,7 @@ export default {
                 {
                     id: 1,
                     icon: 'icon/path',
-                    name: 'dashboard',
+                    name: 'dasbor',
                     link: '/'
                 },
                 {
@@ -46,20 +46,56 @@ export default {
                 {
                     id: 3,
                     icon: 'icon/path',
-                    name: 'Customer Approval',
-                    link: '/approval'
+                    name: 'pengaturan produk',
+                    link: '/product'
                 },
                 {
                     id: 4,
                     icon: 'icon/path',
-                    name: 'dashboard',
-                    link: '/'
+                    name: 'transaksi',
+                    link: '/transaction'
                 },
                 {
                     id: 5,
                     icon: 'icon/path',
-                    name: 'dashboard',
-                    link: '/'
+                    name: 'ERP',
+                    link: 'erp'
+                },
+                {
+                    id: 6,
+                    icon: 'icon/path',
+                    name: 'finansial',
+                    link: 'financial'
+                },
+                {
+                    id: 7,
+                    icon: 'icon/path',
+                    name: 'promo',
+                    link: 'promo'
+                },
+                {
+                    id: 8,
+                    icon: 'icon/path',
+                    name: 'media',
+                    link: 'media'
+                },
+                {
+                    id: 9,
+                    icon: 'icon/path',
+                    name: 'admin',
+                    link: 'admin'
+                },
+                {
+                    id: 10,
+                    icon: 'icon/path',
+                    name: 'mitra sales',
+                    link: 'sales'
+                },
+                {
+                    id: 11,
+                    icon: 'icon/path',
+                    name: 'pengaturan',
+                    link: 'setting'
                 }
             ]
         }

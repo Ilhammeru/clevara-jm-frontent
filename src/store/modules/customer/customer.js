@@ -177,4 +177,4 @@ export default {
     getters,
     state,
     mutations
-  };
+};
