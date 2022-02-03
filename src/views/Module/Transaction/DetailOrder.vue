@@ -262,6 +262,11 @@ export default {
     }
 }
 
+.button_action_group {
+    display: flex;
+    align-items: center;
+}
+
 .table {
     thead {
         tr {
