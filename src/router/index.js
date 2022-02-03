@@ -16,6 +16,8 @@ import FluctuationPrice from '../views/Module/Master/Price/FluctuationPrice.vue'
 import PriceUpdate from '../views/Module/Master/Price/PriceUpdate.vue'
 import CreatePriceUpdate from '../views/Module/Master/Price/CreatePriceUpdate.vue'
 import SalesOrder from '../views/Module/Transaction/SalesOrder.vue'
+import DetailOrder from '../views/Module/Transaction/DetailOrder.vue'
+import ConfirmationPayment from '../views/Module/Transaction/ConfirmationPayment.vue'
 
 Vue.use(VueRouter)
 
@@ -99,6 +101,16 @@ const routes = [
     path: '/order',
     name: 'Sales Order',
     component: SalesOrder
+  },
+  {
+    path: '/order/:id',
+    name: 'Detail Order',
+    component: DetailOrder
+  },
+  {
+    path: '/order-confirmation',
+    name: 'Confirmation Payment',
+    component: ConfirmationPayment
   },
 ]
 

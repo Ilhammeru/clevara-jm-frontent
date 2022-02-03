@@ -53,7 +53,7 @@ export default {
                     id: 4,
                     icon: 'icon/path',
                     name: 'transaksi',
-                    link: '/transaction'
+                    link: '/order'
                 },
                 {
                     id: 5,
