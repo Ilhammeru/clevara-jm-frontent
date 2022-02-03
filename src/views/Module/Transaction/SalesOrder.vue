@@ -63,19 +63,19 @@ export default {
     data() {
         return {
             sales: [
-                {id: 1, so: '#SO/1/2110/0327', invoice: '046/TKL/TJS/21', date: '11-08-2022', duedate: '20-09-2022', customer: 'Binamitra Handaya Perkasa, PT', type: 'contractor', product: [
+                {id: 1, so: '#SO/1/2110/0327', invoice: '046/TKL/TJS/21', date: '11-08-2022', duedate: '20-09-2022', customer: 'Binamitra Handaya Perkasa, PT', type: 'kontraktor', product: [
                     {id: 1, name: 'Tee Las SCH 20 Stainless SS'},
                     {id: 1, name: 'Tee Las SCH 20 Stainless SS'}
                 ], total: '71,935,920', status: 'Menunggu Pembayaran'},
-                {id: 2, so: '#SO/1/2110/0327', invoice: '046/TKL/TJS/21', date: '11-08-2022', duedate: '20-09-2022', customer: 'Binamitra Handaya Perkasa, PT', type: 'contractor', product: [
+                {id: 2, so: '#SO/1/2110/0327', invoice: '046/TKL/TJS/21', date: '11-08-2022', duedate: '20-09-2022', customer: 'Binamitra Handaya Perkasa, PT', type: 'kontraktor', product: [
                     {id: 1, name: 'Tee Las SCH 20 Stainless SS'},
                     {id: 1, name: 'Tee Las SCH 20 Stainless SS'}
                 ], total: '71,935,920', status: 'Menunggu Pembayaran'},
-                {id: 3, so: '#SO/1/2110/0327', invoice: '046/TKL/TJS/21', date: '11-08-2022', duedate: '20-09-2022', customer: 'Binamitra Handaya Perkasa, PT', type: 'contractor', product: [
+                {id: 3, so: '#SO/1/2110/0327', invoice: '046/TKL/TJS/21', date: '11-08-2022', duedate: '20-09-2022', customer: 'Binamitra Handaya Perkasa, PT', type: 'kontraktor', product: [
                     {id: 1, name: 'Tee Las SCH 20 Stainless SS'},
                     {id: 1, name: 'Tee Las SCH 20 Stainless SS'}
                 ], total: '71,935,920', status: 'Menunggu Pembayaran'},
-                {id: 4, so: '#SO/1/2110/0327', invoice: '046/TKL/TJS/21', date: '11-08-2022', duedate: '20-09-2022', customer: 'Binamitra Handaya Perkasa, PT', type: 'contractor', product: [
+                {id: 4, so: '#SO/1/2110/0327', invoice: '046/TKL/TJS/21', date: '11-08-2022', duedate: '20-09-2022', customer: 'Binamitra Handaya Perkasa, PT', type: 'kontraktor', product: [
                     {id: 1, name: 'Tee Las SCH 20 Stainless SS'},
                     {id: 1, name: 'Tee Las SCH 20 Stainless SS'}
                 ], total: '71,935,920', status: 'Menunggu Pembayaran'},
@@ -160,6 +160,16 @@ table tbody tr {
 
         table.table {
             width: 150%;
+        }
+    }
+}
+
+@media all and (min-width: 1301px) and (max-width: 1500px) {
+    .table-responsive {
+        overflow-x: auto;
+
+        table.table {
+            width: 120%;
         }
     }
 }

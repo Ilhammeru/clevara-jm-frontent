@@ -9,34 +9,36 @@
 
             <div class="card jm_card card_confirmation">
                 <div class="card-body">
-                    <table class="table jm_table">
-                        <thead>
-                            <tr>
-                                <th>No. Order</th>
-                                <th>Tanggal</th>
-                                <th>Bank</th>
-                                <th>No. Rekening</th>
-                                <th>Atas Nama</th>
-                                <th>Total</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr v-for="item in confirmation" :key="item.id" v-b-modal.modal-confirmation>
-                                <td>{{ item.invoice }}</td>
-                                <td>{{ item.date }}</td>
-                                <td>{{ item.bank }}</td>
-                                <td>{{ item.account }}</td>
-                                <td>{{ item.name }}</td>
-                                <td>{{ item.total }}</td>
-                                <td>
-                                    <button class="btn_status" :class="{'is_verify': item.isVerify}">
-                                        {{ item.status }}
-                                    </button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table jm_table">
+                            <thead>
+                                <tr>
+                                    <th>No. Order</th>
+                                    <th>Tanggal</th>
+                                    <th>Bank</th>
+                                    <th>No. Rekening</th>
+                                    <th>Atas Nama</th>
+                                    <th>Total</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="item in confirmation" :key="item.id" v-b-modal.modal-confirmation>
+                                    <td>{{ item.invoice }}</td>
+                                    <td>{{ item.date }}</td>
+                                    <td>{{ item.bank }}</td>
+                                    <td>{{ item.account }}</td>
+                                    <td>{{ item.name }}</td>
+                                    <td>{{ item.total }}</td>
+                                    <td>
+                                        <button class="btn_status" :class="{'is_verify': item.isVerify}">
+                                            {{ item.status }}
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -93,7 +95,7 @@
                 </div>
             </div>
 
-            <button class="btn w-100 jm_green jm_btn">simpan Butki Pembayaran</button>
+            <button class="btn w-100 jm_green jm_btn text-center">simpan Butki Pembayaran</button>
         </b-modal>
     </div>
 </template>
@@ -144,5 +146,15 @@ export default {
 .is_verify {
     background: #006664;
     color: #FFFFFF;
+}
+
+@media all and (min-width: 1113px) and (max-width: 1300px) {
+    .table-responsive {
+        overflow-x: auto;
+
+        table.table {
+            width: 150%;
+        }
+    }
 }
 </style>
