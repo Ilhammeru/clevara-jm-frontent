@@ -11,6 +11,11 @@ import Unit from '../views/Module/Master/Unit/Unit.vue'
 import Brand from '../views/Module/Master/Brand/Brand.vue'
 import Supplier from '../views/Module/Master/Supplier/Supplier.vue'
 import AddSupplier from '../views/Module/Master/Supplier/AddSupplier.vue'
+import Discount from '../views/Module/Master/Discount/Discount.vue'
+import FluctuationPrice from '../views/Module/Master/Price/FluctuationPrice.vue'
+import PriceUpdate from '../views/Module/Master/Price/PriceUpdate.vue'
+import CreatePriceUpdate from '../views/Module/Master/Price/CreatePriceUpdate.vue'
+import SalesOrder from '../views/Module/Transaction/SalesOrder.vue'
 
 Vue.use(VueRouter)
 
@@ -69,6 +74,31 @@ const routes = [
     path: '/supplier/create',
     name: 'Create Supplier',
     component: AddSupplier
+  },
+  {
+    path: '/discount',
+    name: 'Discount',
+    component: Discount
+  },
+  {
+    path: '/fluctuation',
+    name: 'Price Fluctuation',
+    component: FluctuationPrice
+  },
+  {
+    path: '/update-price',
+    name: 'Update Price',
+    component: PriceUpdate
+  },
+  {
+    path: '/update-price/create',
+    name: 'Create Update Price',
+    component: CreatePriceUpdate
+  },
+  {
+    path: '/order',
+    name: 'Sales Order',
+    component: SalesOrder
   },
 ]
 
