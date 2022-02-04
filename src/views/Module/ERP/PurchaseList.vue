@@ -84,6 +84,9 @@ export default {
 
 <style lang="scss" scoped>
 .button_add_group {
+    display: flex;
+    align-items: center;
+    
     &_manual {
         background: transparent !important;
         border: 1px solid #006664 !important;
