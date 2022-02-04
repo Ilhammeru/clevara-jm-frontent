@@ -59,7 +59,7 @@ export default {
                     id: 5,
                     icon: 'icon/path',
                     name: 'ERP',
-                    link: 'erp'
+                    link: '/purchase'
                 },
                 {
                     id: 6,

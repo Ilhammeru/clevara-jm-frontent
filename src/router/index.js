@@ -18,6 +18,10 @@ import CreatePriceUpdate from '../views/Module/Master/Price/CreatePriceUpdate.vu
 import SalesOrder from '../views/Module/Transaction/SalesOrder.vue'
 import DetailOrder from '../views/Module/Transaction/DetailOrder.vue'
 import ConfirmationPayment from '../views/Module/Transaction/ConfirmationPayment.vue'
+import PurchaseList from '../views/Module/ERP/PurchaseList.vue'
+import InvoiceList from '../views/Module/ERP/InvoiceList.vue'
+import CreatePurchase from '../views/Module/ERP/CreatePurchase.vue'
+import DetailPurchase from '../views/Module/ERP/DetailPurchase.vue'
 
 Vue.use(VueRouter)
 
@@ -111,6 +115,26 @@ const routes = [
     path: '/order-confirmation',
     name: 'Confirmation Payment',
     component: ConfirmationPayment
+  },
+  {
+    path: '/purchase',
+    name: 'Purchase Order',
+    component: PurchaseList
+  },
+  {
+    path: '/purchase/create',
+    name: 'Create Purchase Order',
+    component: CreatePurchase
+  },
+  {
+    path: '/purchase/detail/:id',
+    name: 'Detail Purchase Order',
+    component: DetailPurchase
+  },
+  {
+    path: '/invoice',
+    name: 'Invoice List',
+    component: InvoiceList
   },
 ]
 

@@ -26,7 +26,7 @@ export default {
             default: 'Search for clients, status'
         },
         isSales: {
-            type: String,
+            type: Boolean,
             default: false
         }
     }
