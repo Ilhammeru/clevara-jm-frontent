@@ -65,7 +65,7 @@ export default {
                     id: 6,
                     icon: 'icon/path',
                     name: 'finansial',
-                    link: 'financial'
+                    link: '/finance/pnl'
                 },
                 {
                     id: 7,

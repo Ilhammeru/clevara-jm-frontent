@@ -12,6 +12,8 @@ import Brand from '../views/Module/Master/Brand/Brand.vue'
 import Supplier from '../views/Module/Master/Supplier/Supplier.vue'
 import AddSupplier from '../views/Module/Master/Supplier/AddSupplier.vue'
 import Discount from '../views/Module/Master/Discount/Discount.vue'
+import Promo from '../views/Module/Master/Promo/Promo.vue'
+import CreatePromo from '../views/Module/Master/Promo/CreatePromo.vue'
 import FluctuationPrice from '../views/Module/Master/Price/FluctuationPrice.vue'
 import PriceUpdate from '../views/Module/Master/Price/PriceUpdate.vue'
 import CreatePriceUpdate from '../views/Module/Master/Price/CreatePriceUpdate.vue'
@@ -22,6 +24,14 @@ import PurchaseList from '../views/Module/ERP/PurchaseList.vue'
 import InvoiceList from '../views/Module/ERP/InvoiceList.vue'
 import CreatePurchase from '../views/Module/ERP/CreatePurchase.vue'
 import DetailPurchase from '../views/Module/ERP/DetailPurchase.vue'
+import PnL from '../views/Module/Finance/PnL.vue'
+import DetailPnL from '../views/Module/Finance/DetailPnL.vue'
+import Master from '../views/Module/Finance/Master.vue'
+import Article from '../views/Module/Media/Article.vue'
+import Banner from '../views/Module/Media/Banner.vue'
+import CreateBanner from '../views/Module/Media/CreateBanner.vue'
+import CreateArticle from '../views/Module/Media/CreateArticle.vue'
+import ArticleCategory from '../views/Module/Media/ArticleCategory.vue'
 
 Vue.use(VueRouter)
 
@@ -87,6 +97,16 @@ const routes = [
     component: Discount
   },
   {
+    path: '/promo',
+    name: 'Promo',
+    component: Promo
+  },
+  {
+    path: '/promo/create',
+    name: 'Create Promo',
+    component: CreatePromo
+  },
+  {
     path: '/fluctuation',
     name: 'Price Fluctuation',
     component: FluctuationPrice
@@ -135,6 +155,46 @@ const routes = [
     path: '/invoice',
     name: 'Invoice List',
     component: InvoiceList
+  },
+  {
+    path: '/finance/pnl',
+    name: 'Profit and Loss',
+    component: PnL
+  },
+  {
+    path: '/finance/pnl/detail',
+    name: 'Detal Profit and Loss',
+    component: DetailPnL
+  },
+  {
+    path: '/finance/master',
+    name: 'Master Finance',
+    component: Master
+  },
+  {
+    path: '/media/article',
+    name: 'Article',
+    component: Article
+  },
+  {
+    path: '/media/article/create',
+    name: 'Create Article',
+    component: CreateArticle
+  },
+  {
+    path: '/media/banner',
+    name: 'Banner',
+    component: Banner
+  },
+  {
+    path: '/media/banner/create',
+    name: 'Create Banner',
+    component: CreateBanner
+  },
+  {
+    path: '/media/article/category',
+    name: 'Article Cateogry',
+    component: ArticleCategory
   },
 ]
 
