@@ -1,19 +1,15 @@
 <template>
-    <div class="jm_container_search" :class="{'custom_container': isSales}">
+    <div class="jm_container_search">
         <input type="text" class="jm_container_search_input_default" :placeholder="placeholder">
 
-        <button class="btn jm_btn_transparent btn_date" v-show="isSales">
-            Periode: 
-            <span class="helper_date">01/08/2021 - 14/08/2021</span>
-        </button>
-        <button class="btn jm_btn_transparent" v-show="isSales">Status</button>
-        <button class="btn jm_btn_transparent" v-show="isSales">Filter Kolom</button>
-        <button class="btn jm_btn_transparent btn_export" v-show="isSales">Export</button>
-
-        <div class="jm_container_search_btn_group_default" v-show="!isSales">
-        <button class="btn jm_btn_transparent" v-show="isArticle">Status</button>
-            <button class="btn jm_btn_transparent">Filter Kolom</button>
-            <button class="btn jm_btn_transparent btn_export">Export</button>
+        <div>
+            <button class="btn jm_btn_transparent btn_date" v-show="isSales">
+                Periode: 
+                <span class="helper_date">01/08/2021 - 14/08/2021</span>
+            </button>
+            <button class="btn jm_btn_transparent" v-show="isSales">Status</button>
+            <button class="btn jm_btn_transparent" v-show="isSales">Filter Kolom</button>
+            <button class="btn jm_btn_transparent btn_export" v-show="isSales">Export</button>
         </div>
     </div>
 </template>

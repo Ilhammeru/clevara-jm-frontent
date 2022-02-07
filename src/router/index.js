@@ -32,6 +32,12 @@ import Banner from '../views/Module/Media/Banner.vue'
 import CreateBanner from '../views/Module/Media/CreateBanner.vue'
 import CreateArticle from '../views/Module/Media/CreateArticle.vue'
 import ArticleCategory from '../views/Module/Media/ArticleCategory.vue'
+import User from '../views/Module/User/User.vue'
+import CreateUser from '../views/Module/User/CreateUser.vue'
+import Access from '../views/Module/User/Access.vue'
+import DetailUser from '../views/Module/User/DetailUser.vue'
+import Mitra from '../views/Module/Mitra/Mitra.vue'
+import CreateMitra from '../views/Module/Mitra/CreateMitra.vue'
 
 Vue.use(VueRouter)
 
@@ -195,6 +201,36 @@ const routes = [
     path: '/media/article/category',
     name: 'Article Cateogry',
     component: ArticleCategory
+  },
+  {
+    path: '/management/user',
+    name: 'User List',
+    component: User
+  },
+  {
+    path: '/management/user/detail',
+    name: 'Detail User List',
+    component: DetailUser
+  },
+  {
+    path: '/management/user/create',
+    name: 'Create User',
+    component: CreateUser
+  },
+  {
+    path: '/management/access',
+    name: 'Access',
+    component: Access
+  },
+  {
+    path: '/mitra',
+    name: 'Mitra',
+    component: Mitra
+  },
+  {
+    path: '/mitra/create',
+    name: 'Mitra Create',
+    component: CreateMitra
   },
 ]
 

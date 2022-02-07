@@ -120,4 +120,8 @@ export default {
 .jm_btn {
     border: none;
 }
+
+.card_article_category {
+    margin-bottom: 24px;
+}
 </style>
