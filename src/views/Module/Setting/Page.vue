@@ -3,7 +3,7 @@
         <div class="jm_container_context">
             <div class="jm_container_context_breadcrumb">
                 <p>Daftar Admin</p>
-                <button class="jm_btn jm_green p_white" v-b-modal.modal-add-article-category>+ Admin</button>
+                <button class="jm_btn jm_green p_white" v-b-modal.modal-add-article-category >+ Admin</button>
             </div>
 
             <Search placeholder="Search for User"/>
