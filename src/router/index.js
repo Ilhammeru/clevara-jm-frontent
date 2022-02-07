@@ -41,6 +41,7 @@ import CreateMitra from '../views/Module/Mitra/CreateMitra.vue'
 import SettingGeneral from '../views/Module/Setting/General.vue'
 import SettingPage from '../views/Module/Setting/Page.vue'
 import CreatePage from '../views/Module/Setting/CreatePage.vue'
+import Region from '../views/Module/Setting/Region.vue'
 
 Vue.use(VueRouter)
 
@@ -249,6 +250,11 @@ const routes = [
     path: '/setting/page/create',
     name: 'Create Page',
     component: CreatePage
+  },
+  {
+    path: '/setting/region',
+    name: 'Region',
+    component: Region
   },
 ]
 
