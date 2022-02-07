@@ -36,8 +36,8 @@
                         <div class="row">
                             <div class="col-md-6 col-sm-12">
                                 <div class="jm_form_group">
-                                    <label for="">URL</label>
-                                    <input type="text" class="jm_input" placeholder="#">
+                                    <label for="">Nama Aplikasi</label>
+                                    <input type="text" class="jm_input" placeholder="Nama Aplikasi">
                                 </div>
                             </div>
                             <div class="col col-md-6 col-sm-12">

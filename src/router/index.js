@@ -38,6 +38,9 @@ import Access from '../views/Module/User/Access.vue'
 import DetailUser from '../views/Module/User/DetailUser.vue'
 import Mitra from '../views/Module/Mitra/Mitra.vue'
 import CreateMitra from '../views/Module/Mitra/CreateMitra.vue'
+import SettingGeneral from '../views/Module/Setting/General.vue'
+import SettingPage from '../views/Module/Setting/Page.vue'
+import CreatePage from '../views/Module/Setting/CreatePage.vue'
 
 Vue.use(VueRouter)
 
@@ -232,7 +235,23 @@ const routes = [
     name: 'Mitra Create',
     component: CreateMitra
   },
+  {
+    path: '/setting/general',
+    name: 'Setting General',
+    component: SettingGeneral
+  },
+  {
+    path: '/setting/page',
+    name: 'Setting Page',
+    component: SettingPage
+  },
+  {
+    path: '/setting/page/create',
+    name: 'Create Page',
+    component: CreatePage
+  },
 ]
+
 
 const router = new VueRouter({
   mode: 'history',
