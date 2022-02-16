@@ -4,6 +4,10 @@ import Vuex from 'vuex'
 // modules
 import customer from './modules/customer/customer'
 import product from './modules/inventory/product'
+import general from './modules/general'
+import auth from './modules/auth/auth'
+import category from './modules/master/category'
+import brand from './modules/master/brand'
 
 Vue.use(Vuex)
 
@@ -16,6 +20,10 @@ export default new Vuex.Store({
   },
   modules: {
     customer: customer,
-    inventory: product
+    inventory: product,
+    general: general,
+    auth: auth,
+    category: category,
+    brand: brand
   }
 })

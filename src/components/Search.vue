@@ -1,6 +1,6 @@
 <template>
     <div class="jm_container_search">
-        <input type="text" class="jm_container_search_input_default" :placeholder="placeholder">
+        <input type="text" class="jm_container_search_input_default" :placeholder="placeholder" @input="$emit('searchItem', form.search)" v-model="form.search">
 
         <button class="btn jm_btn_transparent btn_date" v-show="isSales">
             Periode: 
@@ -33,6 +33,13 @@ export default {
         isArticle: {
             type: Boolean,
             default: false
+        }
+    },
+    data() {
+        return {
+            form: {
+                search: ""
+            }
         }
     }
 }

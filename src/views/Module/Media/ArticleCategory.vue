@@ -41,7 +41,6 @@
             centered
             modal-class="jm_modal"
             title="BootstrapVue"
-            @hidden="resetModal"
         >
             <div class="jm_modal_title">
                 <p>Detail Kategori Artikel</p>

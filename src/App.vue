@@ -1,7 +1,13 @@
 <template>
   <div id="app">
-    <Navbar />
+    <Navbar v-show="isLogin" :data="modules" />
     <router-view/>
+
+    <!-- loader -->
+    <loading :active="isLoading"
+        :can-cancel="false"
+        :is-full-page="true"/>
+    <!-- end loader -->
 
     <!-- general modal -->
     <b-modal
@@ -70,6 +76,33 @@ export default {
   name: "App",
   components: {
     Navbar
+  },
+  methods: {
+    init() {
+      let isLogin = localStorage.getItem('isLogin')
+      if (isLogin) {
+        this.$store.dispatch("general/setLogin", true)
+      }
+
+      let module = JSON.parse(localStorage.getItem('module'))
+      if (module != undefined) {
+        this.$store.dispatch("auth/setModule", module)
+      }
+    }
+  },
+  mounted() {
+    this.init()
+  },
+  computed: {
+    isLogin() {
+      return this.$store.getters['general/isLogin']
+    },
+    isLoading() {
+      return this.$store.getters['general/isLoading']
+    },
+    modules() {
+      return this.$store.getters["auth/module"]
+    }
   }
 }
 </script>

@@ -5,6 +5,10 @@ import store from './store'
 
 // 3rd party
 import './lib/bootstrap'
+import './lib/axios'
+import './lib/toast'
+import './lib/loader'
+import './lib/sweetalert'
 
 // component
 import Table from '@/components/Table.vue'

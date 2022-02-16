@@ -5,7 +5,7 @@
                 <p>Sales Order</p>
             </div>
 
-            <Search placeholder="Search for categories" isSales="true" />
+            <Search placeholder="Search for categories" :isSales="true" />
 
             <div class="card jm_card card_sales_order">
                 <div class="card-body">

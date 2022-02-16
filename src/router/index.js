@@ -42,34 +42,73 @@ import SettingGeneral from '../views/Module/Setting/General.vue'
 import SettingPage from '../views/Module/Setting/Page.vue'
 import CreatePage from '../views/Module/Setting/CreatePage.vue'
 import Region from '../views/Module/Setting/Region.vue'
+import Login from '../views/Login.vue'
+import ConfirmEmail from '../views/ConfirmEmail.vue'
+import ResetPassword from '../views/ResetPassword.vue'
+import Expired from '../views/Expired.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
+  // {
+  //   path: '/',
+  //   name: '',
+  //   component: Home,
+  //   meta: {
+  //     requiresAuth: true
+  //   }
+  // },
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'Login',
+    component: Login
+  },
+  {
+    path: '/confirm-email',
+    name: 'Confirm Email',
+    component: ConfirmEmail
+  },
+  {
+    path: '/user/reset',
+    name: 'Reset Password',
+    component: ResetPassword
+  },
+  {
+    path: '/exp',
+    name: 'Expired',
+    component: Expired
   },
   {
     path: '/customer',
     name: 'Customer',
-    component: Customer
+    component: Customer,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/customer/:id',
     name: 'Detail',
-    component: Detail
+    component: Detail,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/approval',
     name: 'Approval',
-    component: Approval
+    component: Approval,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/product',
     name: 'Product',
-    component: Product
+    component: Product,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/product/:id',
@@ -79,7 +118,10 @@ const routes = [
   {
     path: '/category',
     name: 'Category',
-    component: Category
+    component: Category,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/unit',
@@ -263,6 +305,27 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    if (localStorage.getItem('jwt') == null) {
+      next({
+        path: '/'
+      })
+    } else {
+      next()
+    }
+  } else {
+    let jwt = localStorage.getItem('jwt')
+    if ((to.fullPath == '/login' && jwt != null) || (to.fullPath == '/register' && jwt != null) || (to.fullPath == '/' && jwt != null)) {
+      next({
+        path: '/category'
+      })
+    } else {
+      next()
+    }
+  }
 })
 
 export default router
