@@ -3,7 +3,7 @@
         <div class="jm_container_context">
             <div class="jm_container_context_breadcrumb">
                 <p>Daftar Akses</p>
-                <button class="jm_btn jm_green p_white" v-b-modal.modal-add-article-category>+ Akses Baru</button>
+                <button class="jm_btn jm_green p_white" @click.prevent="create">+ Akses Baru</button>
             </div>
 
             <Search placeholder="Search for User"/>
@@ -20,7 +20,7 @@
                         </thead>
                         <tbody>
                             <tr v-for="item in access" :key="item.id">
-                                <td class="access_name">{{ item.access }}</td>
+                                <td class="access_name">{{ item.name }}</td>
                                 <td class="access_slug">{{ item.slug }}</td>
                                 <td class="access_action">
                                     <div class="jm_table_action">
@@ -46,10 +46,23 @@ export default {
     },
     data() {
         return {
-            access: [
-                {id: 1, access: 'Super Admin', slug: 'super-admin'},
-                {id: 2, access: 'Admin', slug: 'admin'}
-            ]
+            isEdit: false
+        }
+    },
+    methods: {
+        async init() {
+            await this.$store.dispatch("role/getAll", {page: 0, count: 10})
+        },
+        create() {
+            return this.$router.push('/management/access/create')
+        }
+    },
+    mounted() {
+        this.init()
+    },
+    computed: {
+        access()  {
+            return this.$store.getters["role/showRole"]
         }
     }
 }
@@ -91,5 +104,6 @@ export default {
     line-height: 140%;
     letter-spacing: 0.04em;
     color: #006664;
+    text-transform: capitalize;
 }
 </style>

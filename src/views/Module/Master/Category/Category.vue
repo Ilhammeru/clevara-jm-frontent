@@ -141,6 +141,7 @@ export default {
             for (let a = 0; a < all.length; a++) {
                 all[a].classList.remove('active')
             }
+            this.isEdit = false
         },
         deleteItem(name, id) {
             this.$swal({

@@ -99,6 +99,7 @@ export default {
         resetModal() {
             this.form.name = ""
             this.form.description = ""
+            this.isEdit = false
         },
         deleteItem(name, id) {
             this.$swal({

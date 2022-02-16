@@ -34,8 +34,8 @@ import CreateArticle from '../views/Module/Media/CreateArticle.vue'
 import ArticleCategory from '../views/Module/Media/ArticleCategory.vue'
 import User from '../views/Module/User/User.vue'
 import CreateUser from '../views/Module/User/CreateUser.vue'
-import Access from '../views/Module/User/Access.vue'
-import DetailUser from '../views/Module/User/DetailUser.vue'
+import Access from '../views/Module/Master/Role/Access.vue'
+import CreateAccess from '../views/Module/Master/Role/CreateAccess.vue'
 import Mitra from '../views/Module/Mitra/Mitra.vue'
 import CreateMitra from '../views/Module/Mitra/CreateMitra.vue'
 import SettingGeneral from '../views/Module/Setting/General.vue'
@@ -254,9 +254,9 @@ const routes = [
     component: User
   },
   {
-    path: '/management/user/detail',
-    name: 'Detail User List',
-    component: DetailUser
+    path: '/management/access/create',
+    name: 'Create Role',
+    component: CreateAccess
   },
   {
     path: '/management/user/create',
