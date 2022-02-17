@@ -22,7 +22,7 @@
                                 <td class="unit_name">{{ item.name }}</td>
                                 <td class="unit_action">
                                     <div class="jm_table_action">
-                                        <span>edit</span>
+                                        <span>ubah</span>
                                         <span>hapus</span>
                                     </div>
                                 </td>

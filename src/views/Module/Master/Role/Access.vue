@@ -24,7 +24,7 @@
                                 <td class="access_slug">{{ item.slug }}</td>
                                 <td class="access_action">
                                     <div class="jm_table_action">
-                                        <span @click.prevent="edit(item.id)">edit</span>
+                                        <span @click.prevent="edit(item.id)">ubah</span>
                                         <span @click.prevent="deleteItem(item.name, item.id)">hapus</span>
                                     </div>
                                 </td>

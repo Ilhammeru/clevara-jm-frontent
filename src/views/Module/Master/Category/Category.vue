@@ -14,28 +14,20 @@
                         <thead>
                             <tr>
                                 <th>Nama</th>
-                                <th>Order</th>
-                                <th>Status</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr v-show="category.length == 0">
-                                <td colspan="4">
+                                <td colspan="2">
                                     <p class="empty_data">Belum ada kategori di database</p>
                                 </td>
                             </tr>
                             <tr v-for="item in category" :key="item.id" v-show="category.length > 0">
                                 <td class="category_name">{{ item.name }}</td>
-                                <td class="category_order">{{ item.order }}</td>
-                                <td class="category_status">
-                                    <button class="category_status_button">
-                                        {{ item.is_active ? 'aktif' : 'tidak aktif' }}
-                                    </button>
-                                </td>
                                 <td class="category_action">
                                     <div class="jm_table_action">
-                                        <span @click.prevent="edit(item.id)">edit</span>
+                                        <span @click.prevent="edit(item.id)">ubah</span>
                                         <span @click.prevent="deleteItem(item.name, item.id)">hapus</span>
                                     </div>
                                 </td>
@@ -62,24 +54,7 @@
                 <div class="col">
                     <div class="jm_form_group">
                         <label for="">Nama kategori</label>
-                        <input type="text" class="jm_input" placeholder="Nama Kategori" v-model="form.name">
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col col-md-6 col-sm-12">
-                    <div class="jm_form_group">
-                        <label for="">Order</label>
-                        <input type="text" class="jm_input" placeholder="0" v-model="form.order">
-                    </div>
-                </div>
-                <div class="col col-md-6 col-sm-12">
-                    <div class="jm_form_group">
-                        <label for="">Status</label>
-                        <div class="button_status_group">
-                            <button class="btn_status" id="btn_status_1" @click.prevent="chooseStatus('status', 1)">Aktif</button>
-                            <button class="btn_status" id="btn_status_2" @click.prevent="chooseStatus('status', 2)">Tidak Aktif</button>
-                        </div>
+                        <input type="text" class="jm_input" id="category_name" placeholder="Nama Kategori" v-model="form.name">
                     </div>
                 </div>
             </div>
@@ -105,9 +80,7 @@ export default {
             //     {id: 4, name: 'Alat Pemadang Api Ringan (APAR)', order: '100', status: true}
             // ],
             form: {
-                name: "",
-                order: "",
-                is_active: ""
+                name: ""
             },
             isEdit: false,
             id: ''
@@ -117,30 +90,24 @@ export default {
         async search(value) {
             await this.$store.dispatch("category/search", {value: value})
         },
-        chooseStatus(param, value) {
-            console.log(value)
-            let all = document.querySelectorAll('.btn_status')
-            let elem = document.getElementById('btn_' + param + '_' + value)
+        // chooseStatus(param, value) {
+        //     console.log(value)
+        //     let all = document.querySelectorAll('.btn_status')
+        //     let elem = document.getElementById('btn_' + param + '_' + value)
             
-            for (let a = 0; a < all.length; a++) {
-                all[a].classList.remove('active')
-            }
-            elem.classList.add('active')
+        //     for (let a = 0; a < all.length; a++) {
+        //         all[a].classList.remove('active')
+        //     }
+        //     elem.classList.add('active')
 
-            if (value == 1) {
-                this.form.is_active = true
-            } else {
-                this.form.is_active = false
-            }
-        },
+        //     if (value == 1) {
+        //         this.form.is_active = true
+        //     } else {
+        //         this.form.is_active = false
+        //     }
+        // },
         resetModal() {
             this.form.name = ""
-            this.form.order = ""
-            let all = document.querySelectorAll('.btn_status')
-            
-            for (let a = 0; a < all.length; a++) {
-                all[a].classList.remove('active')
-            }
             this.isEdit = false
         },
         deleteItem(name, id) {
@@ -198,16 +165,6 @@ export default {
             data.forEach(element => {
                 if (element.id == id) {
                     this.form.name = element.name
-                    this.form.order = element.order
-                    setTimeout(() => {
-                        if (element.is_active) {
-                            document.getElementById('btn_status_1').classList.add('active')
-                            this.form.is_active = true
-                        } else {
-                            document.getElementById('btn_status_2').classList.add('active')
-                            this.form.is_active = false
-                        }
-                    }, 500)
                 }
             });
             this.isEdit = true
@@ -221,7 +178,6 @@ export default {
     },
     async mounted() {
         await this.generalData()
-        console.log('render category')
     }
 }
 </script>
@@ -274,6 +230,7 @@ export default {
         tr {
             td:first-child {
                 text-align: left;
+                width: 90%
             }
             td {
                 text-align: center;

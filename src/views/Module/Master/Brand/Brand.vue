@@ -27,7 +27,7 @@
                                 <td class="brand_name">{{ item.name }}</td>
                                 <td class="brand_action">
                                     <div class="jm_table_action">
-                                        <span @click.prevent="edit(item.id)">edit</span>
+                                        <span @click.prevent="edit(item.id)">ubah</span>
                                         <span @click.prevent="deleteItem(item.name, item.id)">hapus</span>
                                     </div>
                                 </td>
@@ -58,14 +58,6 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <div class="jm_form_group">
-                        <label for="">Deskripsi</label>
-                        <textarea class="jm_input" id="" cols="10" rows="5" v-model="form.description"></textarea>
-                    </div>
-                </div>
-            </div>
 
             <button class="btn w-100 jm_green jm_btn" @click.prevent="save">simpan merek</button>
         </b-modal>
@@ -82,8 +74,7 @@ export default {
     data() {
         return {
             form: {
-                name: "",
-                description: ""
+                name: ""
             },
             id: "",
             isEdit: false
@@ -153,7 +144,6 @@ export default {
             data.forEach(element => {
                 if (element.id == id) {
                     this.form.name = element.name
-                    this.form.description = element.description
                 }
             });
             this.isEdit = true
