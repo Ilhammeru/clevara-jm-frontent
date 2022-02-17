@@ -75,6 +75,11 @@ export default {
                         this.$swal('Sukses', 'Hapus data berhasil', 'success')
                         this.$store.dispatch("role/getAll", {page: 0, count: 10})
                     })
+                    .catch(err => {
+                        this.$toast.error(err.response.data.message, {
+                            timeout: 3000
+                        });
+                    })
                 }
             })
         },
