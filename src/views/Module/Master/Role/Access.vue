@@ -6,7 +6,7 @@
                 <button class="jm_btn jm_green p_white" @click.prevent="create">+ Akses Baru</button>
             </div>
 
-            <Search placeholder="Search for User"/>
+            <Search placeholder="Search for User" @searchItem="search"/>
 
             <div class="card jm_card card_access">
                 <div class="card-body">
@@ -24,8 +24,8 @@
                                 <td class="access_slug">{{ item.slug }}</td>
                                 <td class="access_action">
                                     <div class="jm_table_action">
-                                        <span>edit</span>
-                                        <span>hapus</span>
+                                        <span @click.prevent="edit(item.id)">edit</span>
+                                        <span @click.prevent="deleteItem(item.name, item.id)">hapus</span>
                                     </div>
                                 </td>
                             </tr>
@@ -55,7 +55,35 @@ export default {
         },
         create() {
             return this.$router.push('/management/access/create')
-        }
+        },
+        deleteItem(name, id) {
+            this.$swal({
+                text: 'Anda yakin ingin menghapus role ' + name + '?',
+                title: 'Hapus data',
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Ya, Hapus data",
+                cancelButtonText: "Tidak",
+                closeOnConfirm: true,
+                closeOnCancel: true 
+            })
+            .then(async (confirmed) => {
+                if (confirmed.isConfirmed) {
+                    await this.axios.delete("/role/" + id)
+                    .then(() => {
+                        this.$swal('Sukses', 'Hapus data berhasil', 'success')
+                        this.$store.dispatch("role/getAll", {page: 0, count: 10})
+                    })
+                }
+            })
+        },
+        edit(id) {
+            this.$router.push('/management/access/edit/' + id)
+        },
+        async search(value) {
+            await this.$store.dispatch("role/search", {value: value})
+        },
     },
     mounted() {
         this.init()

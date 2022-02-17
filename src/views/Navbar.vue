@@ -171,6 +171,7 @@ export default {
                     color: #212121;
                     margin-bottom: 0;
                     margin-top: 0;
+                    cursor: pointer;
                 }
             }
 
@@ -200,6 +201,7 @@ export default {
                         color: #212121;
                         margin-bottom: 0;
                         margin-top: 0;
+                        cursor: pointer;
                     }
                 }
             }

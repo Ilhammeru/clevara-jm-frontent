@@ -259,6 +259,11 @@ const routes = [
     component: CreateAccess
   },
   {
+    path: '/management/access/edit/:id',
+    name: 'Edit Role',
+    component: CreateAccess
+  },
+  {
     path: '/management/user/create',
     name: 'Create User',
     component: CreateUser
