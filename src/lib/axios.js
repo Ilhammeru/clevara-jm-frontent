@@ -1,7 +1,6 @@
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import Vue from 'vue'
-import store from '../store/modules/general';
 
 var jwt = localStorage.getItem('jwt')
 if (jwt != null) {
@@ -22,4 +21,5 @@ if (jwt != null) {
 }
 
 axios.defaults.baseURL = process.env.VUE_APP_BASE_URL
+axios.defaults.headers.common['Allow-Control-Allow-Origin'] = '*'
 Vue.use(VueAxios, axios)
