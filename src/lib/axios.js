@@ -21,5 +21,6 @@ if (jwt != null) {
 }
 
 axios.defaults.baseURL = process.env.VUE_APP_BASE_URL
-axios.defaults.headers.common['Allow-Control-Allow-Origin'] = '*'
+axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*'
+axios.defaults.headers.common['Access-Control-Allow-Methods'] = '*'
 Vue.use(VueAxios, axios)
