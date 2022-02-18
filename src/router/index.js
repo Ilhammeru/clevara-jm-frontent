@@ -113,7 +113,10 @@ const routes = [
   {
     path: '/product/:id',
     name: 'Detail Product',
-    component: DetailProduct
+    component: DetailProduct,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/category',
@@ -126,182 +129,290 @@ const routes = [
   {
     path: '/unit',
     name: 'Unit',
-    component: Unit
+    component: Unit,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/brand',
     name: 'Brand',
-    component: Brand
+    component: Brand,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/supplier',
     name: 'Supplier',
-    component: Supplier
+    component: Supplier,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/supplier/create',
     name: 'Create Supplier',
-    component: AddSupplier
+    component: AddSupplier,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/discount',
     name: 'Discount',
-    component: Discount
+    component: Discount,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/promo',
     name: 'Promo',
-    component: Promo
+    component: Promo,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/promo/create',
     name: 'Create Promo',
-    component: CreatePromo
+    component: CreatePromo,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/fluctuation',
     name: 'Price Fluctuation',
-    component: FluctuationPrice
+    component: FluctuationPrice,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/update-price',
     name: 'Update Price',
-    component: PriceUpdate
+    component: PriceUpdate,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/update-price/create',
     name: 'Create Update Price',
-    component: CreatePriceUpdate
+    component: CreatePriceUpdate,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/order',
     name: 'Sales Order',
-    component: SalesOrder
+    component: SalesOrder,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/order/:id',
     name: 'Detail Order',
-    component: DetailOrder
+    component: DetailOrder,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/order-confirmation',
     name: 'Confirmation Payment',
-    component: ConfirmationPayment
+    component: ConfirmationPayment,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/purchase',
     name: 'Purchase Order',
-    component: PurchaseList
+    component: PurchaseList,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/purchase/create',
     name: 'Create Purchase Order',
-    component: CreatePurchase
+    component: CreatePurchase,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/purchase/detail/:id',
     name: 'Detail Purchase Order',
-    component: DetailPurchase
+    component: DetailPurchase,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/invoice',
     name: 'Invoice List',
-    component: InvoiceList
+    component: InvoiceList,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/finance/pnl',
     name: 'Profit and Loss',
-    component: PnL
+    component: PnL,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/finance/pnl/detail',
     name: 'Detal Profit and Loss',
-    component: DetailPnL
+    component: DetailPnL,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/finance/master',
     name: 'Master Finance',
-    component: Master
+    component: Master,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/media/article',
     name: 'Article',
-    component: Article
+    component: Article,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/media/article/create',
     name: 'Create Article',
-    component: CreateArticle
+    component: CreateArticle,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/media/banner',
     name: 'Banner',
-    component: Banner
+    component: Banner,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/media/banner/create',
     name: 'Create Banner',
-    component: CreateBanner
+    component: CreateBanner,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/media/article/category',
     name: 'Article Cateogry',
-    component: ArticleCategory
+    component: ArticleCategory,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/management/user',
     name: 'User List',
-    component: User
+    component: User,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/management/access/create',
     name: 'Create Role',
-    component: CreateAccess
+    component: CreateAccess,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/management/access/edit/:id',
     name: 'Edit Role',
-    component: CreateAccess
+    component: CreateAccess,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/management/user/create',
     name: 'Create User',
-    component: CreateUser
+    component: CreateUser,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/management/access',
     name: 'Access',
-    component: Access
+    component: Access,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/mitra',
     name: 'Mitra',
-    component: Mitra
+    component: Mitra,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/mitra/create',
     name: 'Mitra Create',
-    component: CreateMitra
+    component: CreateMitra,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/setting/general',
     name: 'Setting General',
-    component: SettingGeneral
+    component: SettingGeneral,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/setting/page',
     name: 'Setting Page',
-    component: SettingPage
+    component: SettingPage,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/setting/page/create',
     name: 'Create Page',
-    component: CreatePage
+    component: CreatePage,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/setting/region',
     name: 'Region',
-    component: Region
+    component: Region,
+    meta: {
+      requiresAuth: true
+    }
   },
 ]
 
