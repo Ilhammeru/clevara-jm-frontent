@@ -1,8 +1,8 @@
 <template>
     <div class="jm_navbar">
         <div class="jm_navbar_logo">
-            <img src="@/assets/icons/Logo.png" alt="">
-            <p>juragan material</p>
+            <img src="@/assets/logo_full_new.png" alt="">
+            <!-- <p>juragan material</p> -->
         </div>
 
         <div class="jm_navbar_link_parent">
@@ -129,8 +129,8 @@ export default {
         margin-bottom: 42.5px;
 
         img {
-            width: 42.54px;
-            height: 40px;
+            width: 150px;
+            height: auto;
         }
 
         p {

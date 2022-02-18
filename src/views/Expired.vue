@@ -3,8 +3,8 @@
         <div class="card jm_card">
             <div class="card-body">
                 <div class="icon">
-                    <img src="@/assets/logo.png" alt="">
-                    <p class="icon-text">Juragan Material</p>
+                    <img src="@/assets/logo_full_new.png" alt="">
+                    <!-- <p class="icon-text">Juragan Material</p> -->
                 </div>
                 <div class="success" id="success">
                     <p>Halaman ini sudah kadaluarsa, silahkan kembali ke halaman utama</p>
@@ -170,6 +170,11 @@ export default {
             display: flex;
             align-items: center;
             justify-content: center;
+
+            img {
+                width: 200px;
+                height: auto;
+            }
 
             .icon-text {
                 font-style: normal;
